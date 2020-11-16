@@ -108,7 +108,7 @@ productRouter.post('/:id/reviews', isAuth, expressAsyncHandler(async (req, res) 
             message: "Review save Successfully."
         })
     } else {
-        res, status(404).send({ message: "Product doesn't exists" })
+        res.status(404).send({ message: "Product doesn't exists" })
     }
 }))
 

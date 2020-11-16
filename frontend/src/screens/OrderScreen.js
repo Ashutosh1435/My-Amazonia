@@ -24,7 +24,7 @@ export default function OrderScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (!order  || successDeliver || (order && order._id !== orderId)) {
+        if (!order || successDeliver || (order && order._id !== orderId)) {
             dispatch({ type: ORDER_PAY_RESET });
             dispatch({ type: ORDER_DELIVER_RESET });
             dispatch(detailsOrder(orderId));
@@ -44,7 +44,7 @@ export default function OrderScreen(props) {
             email_address: userInfo.email,
             phone: order.shippingAddress.phone,
             order_id: order._id,
-            redirect_url: `http://localhost:4100/callback?order_id=${order._id}`,
+            redirect_url: `http://localhost:4500/callback?order_id=${order._id}`,
             webhook_url: '/webhook/',
         };
         Axios.post(`/api/orders/${order._id}/pay`, data, {
@@ -59,7 +59,7 @@ export default function OrderScreen(props) {
     const deliverHandler = () => {
         dispatch(deliverOrder(order._id));
     }
-    
+
     return loading ? (
         <LoadingBox></LoadingBox>
     ) : error ? (
@@ -175,7 +175,7 @@ export default function OrderScreen(props) {
                                                 <LoadingBox></LoadingBox>
                                             ) : (
                                                     <>
-                                                                       
+
                                                         <button type="button" className="primary block"
                                                             onClick={(e => { paymentHandler(e) })} >Pay{" "}{order.totalPrice}</button>
                                                     </>

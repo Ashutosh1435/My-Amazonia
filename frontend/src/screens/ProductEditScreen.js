@@ -68,12 +68,15 @@ function ProductEditScreen(props) {
         bodyFormData.append('image', file);
         setLoadingUpload(true);
         try {
-            const { data } = await Axios.post('/api/uploads', bodyFormData, {
+            const { data } = await Axios.post('/api/uploads/s3', bodyFormData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${userInfo.token}`,
                 },
             })
+            // const arr = data.split('uploads');
+            // const path = arr[1];
+            // setImage(`/uploads/sharp/${path}`);
             setImage(data);
             setLoadingUpload(false);
         } catch (error) {
@@ -115,7 +118,7 @@ function ProductEditScreen(props) {
                                 <label htmlFor="imageFIle">Image File</label>
                                 {/* accept helps in taking only */}
                                 <input type="file" id="imageFIle" accept=".jpg, .jpeg, .png"
-                                label="Chooose Image" onChange={uploadFileHandler}></input>
+                                    label="Chooose Image" onChange={uploadFileHandler}></input>
                                 {loadingUpload && <LoadingBox></LoadingBox>}
                                 {errorUpload && <MessageBox variant="danger">{errorUpload}</MessageBox>}
                             </div>

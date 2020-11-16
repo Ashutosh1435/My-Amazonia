@@ -1,11 +1,11 @@
 import { createRequire } from 'module';
-const require = createRequire(import.meta.url)
+const require = createRequire(import.meta.url);
 const Insta = require('instamojo-nodejs')
 import mongoose from 'mongoose';
 import express from 'express';
 import userRouter from './routers/userRouter.js'
 import productRouter from './routers/productRouter.js';
-import config from './config.js'
+import config from './config.js';
 import orderRouter from './routers/orderRouter.js';
 import url from "url";
 import Order from '../backend/models/orderModel.js';
@@ -69,7 +69,7 @@ app.use((err, req, res, next) => {
 // Hard coded port no. is not recomended at all. port using Environment-Variable.
 
 app.listen(config.port, () => {
-    console.log(`Serve at http://localhost:4100`);
+    console.log(`Serve at http://localhost:${config.port}`);
 });
 
 
