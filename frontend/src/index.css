@@ -1,0 +1,396 @@
+/* Main Document */
+html{
+  font-size: 62.5%; /* 16px * 62.5  = 10px = 1rem */
+  box-sizing: border-box; /* Easy to set order margin an padding*/
+}
+body{
+  margin: 0;
+  height: 100vh; /* view-port height full */
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root{
+  height: 100%;
+}
+/* Layout */
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100%;
+}
+
+header{
+  grid-area: header;
+  background-color: #203040;
+}
+main{
+  grid-area: main;
+  padding: 1rem;
+}
+footer{
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
+/* Common */
+h1{
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h1.center{
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+h2{
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: #ff8000;
+}
+header a{
+  color: #ffffff;
+  padding: 1rem;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap; /* This is done to make responsive, if less space wrap one below other */
+  justify-content: space-between;
+  align-items: center;  /* for alligning items vertically center */
+}
+a.brand{
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.brand:hover{
+  color: #ff8000;
+}
+.badge{
+  background-color: #f02020;
+  color: #f8f8f8;
+  padding: 0.2rem 0.7rem;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  margin-left: 0.5rem;
+}
+
+.row.center{
+
+  justify-content: center; /* for alligning text vertic and horizon center. */
+}
+.row.top{
+  align-items: flex-start;
+}
+.col-1{
+  flex: 1 1 25rem;
+  /* margin: 0 auto; */
+}
+.col-2{
+  flex: 2 1 50rem;
+}
+.min-30{
+  min-width: 30rem;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;  /* remove dots of ul */
+}
+li{
+  margin-top: 1rem;
+}
+input,
+select,
+textarea,
+button{
+  padding: 1rem;
+  background-color: #f7e7e7a4;
+  border-radius: 0.5rem;
+  border: 0.1rem #727070a4 solid;
+  font-size: 1.6rem;
+  font-family:  Helvetica, Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+button{
+  background-color: #f8f8f8;
+  cursor: pointer;
+}
+input:hover,
+select:hover,
+textarea:hover,
+button:hover{
+  padding: 1rem;
+  background-color: #f7e7e7a4;
+  border-radius: 0.5rem;
+  border: 0.1rem #a4a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family:  Helvetica, Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+button.small{
+  font-size:1.2rem;
+}
+button.primary{
+  background-color: rgb(252, 195, 8);
+}
+button.block{
+  width: 100%;
+}
+button:hover{
+  border:0.1rem #404040 solid;
+}
+/* Side Drawer */
+.sidebar{
+  position: fixed;
+  transition: all .5s;
+  transform: translateX(-30rem);
+  width: 30rem;
+  background-color: #f0f0f0;
+  height: 100%;
+}
+.sidebar.open{
+  transform: translateX(0);
+}
+
+.sidebar-close-button{
+  border-radius: 50%;
+  border: .1rem #000000 solid;
+  width: 3rem;
+  height: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+  padding-top: 0;
+  cursor: pointer;
+  position: absolute;
+  right: .5rem;
+  top: 1.5rem
+}
+
+.categories a{
+  padding: 1rem;
+  display: flex;
+  list-style-type: none;
+}
+.categories a:hover{
+  background-color: #c0c0c0; 
+  padding: 1rem;
+}
+/* Image */
+img{
+  border-radius: 0.5rem;
+}
+img.small{
+  max-width: 5rem;
+  width: 100%;
+}
+img.medium{
+  max-width: 29rem;
+  width: 100%;
+}
+img.large{
+  width: 95%;
+  
+}
+/* Card */
+.card{
+  border: 0.1rem #c0bebe solid;
+  background-color: #f8f8f8;
+  border-radius: 0.5rem;
+  margin: 1rem; /* 1st agr is vertic & 2nd is horizon margin*/
+}
+.card-body{
+  padding: 1rem;
+}
+.card-body > *{
+  margin-bottom: 0.5rem;
+}
+.price{
+  font-size: 2rem;
+  font-weight: normal;
+}
+.rating span{
+  color: #f0c040;
+  margin: 0.1rem;
+}
+.rating span:last-child{
+  color: #203040;
+}
+a > .rating > span:last-child {
+  color: blue;
+}
+.success{
+  color: green;
+}
+.danger{
+  color: red;
+}
+.alert{
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
+.alert-info{
+  color: #2020a0;
+  background-color: #e0e0ff;
+}
+.alert-danger{
+  color: #a02020;
+  background-color: #facdcde0;
+}
+.alert-success{
+  color: #20a020;
+  background-color: #c8faa0;
+}
+.loading{
+  display: block !important;
+}
+/* Forms Section */
+.form{
+  max-width: 60rem;
+  margin: 0 auto;
+}
+/* It means all direct child(div) of the form class not inner. */
+.form > div{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+/* It means all label with in the form class */
+.form label{
+  margin: 1rem ;
+  /* display: block ; */
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 30rem;
+  padding: 2rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+  list-style-type: none;
+}
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+/* Dropdown */
+.dropdown{
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content{
+  position: absolute;
+  display: none;
+  right: 0;
+  min-width: 12rem;
+  padding: 1rem;
+  z-index: 1;
+  background-color: #203040;
+  margin: 0;
+  margin-top: 0.4rem;
+  border-radius: 0.5rem;
+
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+/* Checkout Steps */
+
+.checkout-steps  > div {
+  border-top: 0.3rem grey solid;
+  color:  grey;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps >div.active{
+  border-top-color: #f08000;
+  color: #f08000;
+}
+/* Table */
+
+.table{
+  width: 90%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.table tbody tr:nth-of-type(odd){
+  background-color: #f4f4f4;
+}
+.table tbody tr:nth-of-type(odd):hover{
+  background-color: white;
+}
+  .table tbody tr:hover{
+    border: 1px solid black;
+}
+.table td, .table th {
+  text-align:left;
+  /* border: 0.1rem solid #e4e4e4; */
+  padding:0.5rem;
+}
+.table button{
+  margin: 0 0.2rem;
+}
+.table button:nth-of-type(even):hover{
+  background-color: rgb(253, 3, 3);
+  color: white;
+  font-size: 1.3rem;
+}
+.table button:hover{
+  background-color: rgb(2, 252, 2);
+  color: black;
+  font-size: 1.3rem;
+}
+/* filter */
+
+.filter{
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem auto;
+  max-width: 45rem;
+  justify-content: space-between;
+}
+.filter input,
+.filter button,
+.filter select{
+  padding: 1rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1 rem white, solid;
+  font-size: 1.6rem;
+}
+/* Reviews */
+.content-margined {
+  margin: 1rem;
+}
+ul.reviews{
+  list-style-type: none;
+  padding: 0;
+}
+.review li{
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+.review li > div {
+  margin: 0.5rem;
+}
