@@ -14,7 +14,7 @@ const app = express();
 // into req.body in your node aplication
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const URL = "mongodb+srv://my-amazonia:227105@cluster0.oisjf.mongodb.net/my-amazonia?retryWrites=true&w=majority"
+const URL = config.url;
 mongoose.connect(URL,
     {
         useNewUrlParser: true,
