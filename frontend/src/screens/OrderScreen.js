@@ -44,7 +44,7 @@ export default function OrderScreen(props) {
             email_address: userInfo.email,
             phone: order.shippingAddress.phone,
             order_id: order._id,
-            redirect_url: `https://my-amazonia.herokuapp.com?order_id=${order._id}`,
+            redirect_url: `https://my-amazonia.herokuapp.com/callback?order_id=${order._id}`,
             webhook_url: '/webhook/',
         };
         Axios.post(`/api/orders/${order._id}/pay`, data, {
