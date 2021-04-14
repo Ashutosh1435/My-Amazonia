@@ -43,11 +43,11 @@ app.get('/callback', async (req, res) => {
                 email_address: req.body.email_address,
             };
             order.save();
-            return res.redirect(`http://localhost:3000/order/${orderId}`);
+            return res.redirect(`https://my-amazonia.herokuapp.com/order/${orderId}`);
         }
     } else {
         console.log("Payment Failed");
-        return res.redirect(`http://localhost:3000/order/${orderId}`)
+        return res.redirect(`https://my-amazonia.herokuapp.com/order/${orderId}`)
     }
 })
 
