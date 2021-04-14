@@ -83,7 +83,7 @@ a.brand{
   padding: 0.2rem 0.7rem;
   border-radius: 50%;
   font-size: 1.4rem;
-  margin-left: 0.5rem;
+  margin-left: 0.2rem;
 }
 
 .row.center{
@@ -396,3 +396,12 @@ ul.reviews{
 .review li > div {
   margin: 0.5rem;
 }
+/* ON A PHONE */
+@media only screen and (max-width: 600px) {
+   /* CSS HERE ONLY ON PHONE */ 
+   a.brand{
+    color: #ffffff;
+    font-size: 1.0rem;
+    font-weight: bold;
+  }
+  }
