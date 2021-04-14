@@ -52,7 +52,7 @@ app.get('/callback', async (req, res) => {
         }
     } else {
         console.log("Payment Failed");
-        return res.redirect(`http://localhost:3000/order/${orderId}`);
+        return res.redirect(`http://localhost:3000/order/${orderId}`)
     }
 })
 
