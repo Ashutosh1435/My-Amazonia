@@ -25,7 +25,11 @@ function HomeScreen(props) {
     }
     const search = (e) => {
         // e.preventDefault();
-        setSearchKeyword(e.target.value)
+        if (e.target.value === "") {
+            setSearchKeyword(undefined);
+        } else {
+            setSearchKeyword(e.target.value)
+        }
         dispatch(listProducts(category, searchKeyword, sortOrder));
     }
     return (
