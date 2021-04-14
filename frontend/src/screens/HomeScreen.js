@@ -23,8 +23,9 @@ function HomeScreen(props) {
         dispatch(listProducts(category, searchKeyword, sortOrder));
 
     }
-    const submitHandler = (e) => {
-        e.preventDefault();
+    const search = (e) => {
+        // e.preventDefault();
+        setSearchKeyword(e.target.value)
         dispatch(listProducts(category, searchKeyword, sortOrder));
     }
     return (
@@ -33,8 +34,7 @@ function HomeScreen(props) {
             <ul className="filter">
                 <li>
                     <form onSubmit={submitHandler}>
-                        <input name="searchKeyword" placeholder="Search Product" onChange={(e) => setSearchKeyword(e.target.value)}></input>
-                        <button type="submit" className="search">Search</button>
+                        <input name="searchKeyword" placeholder="Search Products..." onKeyUp={search}></input>
                     </form>
                 </li>
                 <li>

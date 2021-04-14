@@ -97,7 +97,7 @@ function App() {
               <Link to="/category/Shirts">Shirts</Link>
             </li>
             <li>
-              <Link to="/category/Books">Shirts</Link>
+              <Link to="/category/Books">Books</Link>
             </li>
           </ul>
         </aside>
