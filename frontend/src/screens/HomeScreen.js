@@ -33,9 +33,7 @@ function HomeScreen(props) {
             {category && <h2>{category}</h2>}
             <ul className="filter">
                 <li>
-                    <form onSubmit={submitHandler}>
-                        <input name="searchKeyword" placeholder="Search Products..." onKeyUp={search}></input>
-                    </form>
+                        <input type="text" name="searchKeyword" placeholder="Search Products..." onKeyUp={search}></input>
                 </li>
                 <li>
                     Sort By{' '}
