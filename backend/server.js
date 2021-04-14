@@ -1,6 +1,3 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const Insta = require('instamojo-nodejs')
 import mongoose from 'mongoose';
 import express from 'express';
 import userRouter from './routers/userRouter.js'
@@ -11,7 +8,6 @@ import url from "url";
 import Order from '../backend/models/orderModel.js';
 import uploadRouter from './routers/uploadRouter.js';
 import path from 'path';
-
 
 const app = express();
 // these are two middlewares used for converting all http requests like body content into
@@ -26,7 +22,6 @@ mongoose.connect(URL,
         useCreateIndex: true,
     }
 )
-
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
