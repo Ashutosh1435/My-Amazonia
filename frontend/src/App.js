@@ -18,16 +18,14 @@ import ShippingAddressScreen from './screens/ShippingAddressScreen';
 import SignInScreen from './screens/SignInScreen';
 import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
-
+// import Banner from './components/Banner';
 function App() {
-
   const openMenu = () => {
     document.querySelector(".sidebar").classList.add("open");
   }
   const closeMenu = () => {
     document.querySelector(".sidebar").classList.remove("open")
   }
-
   const cart = useSelector((state) => state.cart);
   const userSignin = useSelector((state) => state.userSignin);
   const dispatch = useDispatch()
@@ -101,6 +99,7 @@ function App() {
           </ul>
         </aside>
         <main>
+        {/* <Route exact path="/" component={Banner}></Route> */}
           <Route path="/cart/:id?" component={CartScreen}></Route>
           <Route path="/category/:id" component={HomeScreen}></Route>
           <Route exact path="/" component={HomeScreen}></Route>
