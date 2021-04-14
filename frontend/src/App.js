@@ -123,7 +123,7 @@ function App() {
             component={OrderListScreen}
           ></AdminRoute>
         </main>
-        <footer className="row center">All reghts are reserved.</footer>
+        <footer className="row center">All rights are reserved.</footer>
       </div>
     </Router>
   )

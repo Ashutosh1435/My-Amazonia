@@ -364,6 +364,8 @@ a > .rating > span:last-child {
 
 .filter{
   display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
   list-style-type: none;
   padding: 0;
   margin: 1rem auto;
