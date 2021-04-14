@@ -5,7 +5,8 @@ dotenv.config();
 // dotenv.local.config();
 export default {
     port: process.env.PORT,
-    url: process.env.URL,
+    localUrl: process.env.LOCAL_URL,
+    cloudUrl: process.env.CLOUD_URL,
     accessKeyId: process.env.AWS_ACCESS_KEY_ID || 'accessKeyId',
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || 'secretAccessKey',
     sharpPath: process.env.AWS_SHARP_PATH || 'sharpPath',

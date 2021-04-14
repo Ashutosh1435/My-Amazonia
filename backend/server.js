@@ -14,7 +14,7 @@ const app = express();
 // into req.body in your node aplication
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const URL = config.url;
+const URL = config.localUrl;
 mongoose.connect(URL,
     {
         useNewUrlParser: true,
