@@ -7,6 +7,8 @@ export default {
     port: process.env.PORT,
     
     MONGODB_URL: process.env.MONGODB_URL,
+    LOCAL_MONGODB_URL: process.env.LOCAL_MONGODB_URL,
+
     accessKeyId: process.env.AWS_ACCESS_KEY_ID || 'accessKeyId',
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY || 'secretAccessKey',
     sharpPath: process.env.AWS_SHARP_PATH || 'sharpPath',
