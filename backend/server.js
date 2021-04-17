@@ -14,8 +14,8 @@ const app = express();
 // into req.body in your node aplication
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const URL = config.localUrl;
-mongoose.connect(URL,
+
+mongoose.connect(config.MONGODB_URL || 'mongodb://localhost/amazona',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
